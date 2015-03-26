@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<project>
+    <target name="test.phpunit.prepare" hidden="true">
+        <mkdir dir="${project.testreport}"/>
+        <mkdir dir="${project.coverage}"/>
+    </target>
+
+    <target name="test.phpunit" depends="test.phpunit.prepare" description="execute phpunit test when enabled">
+        <if>
+            <equals arg1="${test.phpunit.enabled}" arg2="true"/>
+            <then>
+                <exec command="${project.bin}/phpunit" passthru="true" level="info" checkreturn="true"/>
+            </then>
+            <else>
+                <echo level="notice" message="skipping because target is disabled"/>
+            </else>
+        </if>
+    </target>
+</project>

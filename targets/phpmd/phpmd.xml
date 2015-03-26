@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="phpmd" basedir=".">
+    <target name="phpmd" description="run php mass detector">
+        <if>
+            <equals arg1="${phpmd.enabled}" arg2="true"/>
+            <then>
+                <phpmd rulesets="${phing.commons.root}/targets/phpmd/ruleset.xml">
+                    <fileset refid="${validation.fileset}"/>
+                    <formatter type="xml" outfile="${project.build}/pmd.xml"/>
+                </phpmd>
+            </then>
+            <else>
+                <echo level="notice" message="skipping because target is disabled"/>
+            </else>
+        </if>
+    </target>
+</project>

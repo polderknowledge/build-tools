@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="phpcpd" basedir=".">
+    <target name="phpcpd" description="Run php copy past detector">
+        <if>
+            <equals arg1="${phpcpd.enabled}" arg2="true"/>
+            <then>
+                <phpcpd>
+                    <fileset refid="${validation.fileset}"/>
+                    <formatter type="pmd" outfile="${project.build}/cpd.xml"/>
+                </phpcpd>
+            </then>
+            <else>
+                <echo level="notice" message="skipping because target is disabled"/>
+            </else>
+        </if>
+    </target>
+</project>

@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<project name="common" basedir="." default="clean">
+
+    <!-- ============================================ -->
+    <!-- commons setup -->
+    <!-- ============================================ -->
+    <php function="dirname" returnProperty="phing.commons.root" level="debug">
+        <param value="${phing.file.common}" />
+    </php>
+
+    <!-- ============================================ -->
+    <!-- project properties -->
+    <!-- ============================================ -->
+    <php function="dirname" returnProperty="project.root" level="debug">
+        <param value="${phing.file}" />
+    </php>
+
+    <resolvepath propertyName="project.root" file="${project.root}" />
+
+    <!-- ============================================ -->
+    <!-- fileset definition -->
+    <!-- ============================================ -->
+    <fileset id="all" dir="${project.root}">
+        <include name="**/*.php"/>
+        <exclude name="**/vendor/**" />
+    </fileset>
+
+    <property name="validation.fileset" value="all" override="true" />
+
+    <!-- ============================================ -->
+    <!-- directory settings -->
+    <!-- ============================================ -->
+    <property name="project.vendor" value="${project.root}/vendor" override="true" />
+    <property name="project.bin" value="${project.root}/vendor/bin" override="true" />
+    <property name="project.src" value="${project.root}/src" override="true" />
+    <property name="project.test" value="${project.root}/tests" override="true" />
+    <property name="project.build" value="${project.root}/build" override="true" />
+    <property name="project.phpdoc" value="${project.build}/phpdoc" override="true" />
+    <property name="project.testreport" value="${project.build}/testreport" override="true" />
+    <property name="project.coverage" value="${project.build}/coverage" override="true" />
+
+    <property file="${phing.commons.root}/build.properties.dist" override="true" />
+
+    <if>
+        <available file="${project.root}/build.properties" />
+        <then>
+            <property file="${project.root}/build.properties" override="true" />
+        </then>
+    </if>
+
+    <if>
+        <available file="${project.root}/build.properties.local" />
+        <then>
+            <property file="${project.root}/build.properties.local" />
+        </then>
+    </if>
+
+
+    <import file="${phing.commons.root}/targets/test/phpunit.xml" />
+    <import file="${phing.commons.root}/targets/phpmd/phpmd.xml" />
+    <import file="${phing.commons.root}/targets/phpcpd/phpcpd.xml" />
+    <import file="${phing.commons.root}/targets/phploc/phploc.xml" />
+    <import file="${phing.commons.root}/targets/test/checksyntax.xml" />
+    <import file="${phing.commons.root}/targets/codestyle/checkstyle.xml" />
+    <import file="${phing.commons.root}/targets/phpdoc/phpdoc.xml" />
+
+
+    <target name="clean" description="cleans the workspace">
+        <delete dir="${project.build}" includeemptydirs="true" failonerror="false" />
+    </target>
+
+    <target name="prepare" description="prepares build directory with required folders">
+        <mkdir dir="${project.build}" />
+
+        <mkdir dir="${project.phpdoc}" />
+    </target>
+
+    <target name="test" depends="clean, prepare" description="run all tests">
+        <phingcall target="test.checksyntax" />
+        <phingcall target="test.phpunit" />
+    </target>
+
+    <target name="checkstyle" depends="clean, prepare" description="run all tests">
+        <phingcall target="codestyle.checkstyle" />
+    </target>
+
+    <target name="build" description="run full build chain">
+        <phingcall target="clean" />
+        <phingcall target="prepare" />
+        <phingcall target="test.checksyntax" />
+        <phingcall target="test.phpunit" />
+        <phingcall target="codestyle.checkstyle" />
+    </target>
+
+    <target name="build-ci" description="run full build chain including reports">
+        <phingcall target="clean" />
+        <phingcall target="prepare" />
+        <phingcall target="test.checksyntax" />
+        <phingcall target="test.phpunit" />
+        <phingcall target="codestyle.checkstyle" />
+        <phingcall target="phpcpd" />
+        <phingcall target="phploc" />
+        <phingcall target="phpmd" />
+    </target>
+
+</project>

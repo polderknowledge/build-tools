@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project name="checkstyle" basedir=".">
+    <target name="codestyle.phpcodesniffer" description="check the coding standards">
+        <if>
+            <equals arg1="${codestyle.phpcodesniffer.enabled}" arg2="true"/>
+            <then>
+                <phpcodesniffer
+                        standard="${project.vendor}/polderknowledge/coding-standards/PolderKnowledge/ruleset.xml"
+                        format="summary" skipversioncheck="true">
+                    <fileset refid="${validation.fileset}"/>
+                    <formatter type="full" usefile="false"/>
+                    <formatter type="checkstyle" outfile="${project.build}/checkstyle-codesniffer.xml"/>
+                </phpcodesniffer>
+            </then>
+            <else>
+                <echo level="notice" message="skipping because target is disabled"/>
+            </else>
+        </if>
+    </target>
+
+    <target name="codestyle.phpdoc" description="run checkstyle on php docblocks">
+        <if>
+            <equals arg1="${codestyle.phpdoc.enabled}" arg2="true"/>
+            <then>
+                <exec command="${project.bin}/phpdoc -d ${project.src} --template=checkstyle -t ${project.build} --cache-folder=${project.build}/phpdoc-cache"
+                      passthru="true"/>
+            </then>
+            <else>
+                <echo level="notice" message="skipping because target is disabled"/>
+            </else>
+        </if>
+
+    </target>
+
+    <target name="codestyle.checkstyle" description="run all code style checks"
+            depends="codestyle.phpcodesniffer, codestyle.phpdoc">
+    </target>
+</project>

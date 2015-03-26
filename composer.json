@@ -1,0 +1,15 @@
+{
+    "name": "polderknowledge/build-tools",
+    "description": "A library package containing default build scripts for common usage",
+    "require": {
+        "phing/phing": "~2.10"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jaap van Otterdijk",
+            "email": "jaap@youngguns.nl"
+        }
+    ],
+    "bin": ["bin/init-build.php"]
+}

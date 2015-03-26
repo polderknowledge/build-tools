@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="phploc" basedir=".">
+    <target name="phploc" description="run phploc">
+        <if>
+            <equals arg1="${phploc.enabled}" arg2="true"/>
+            <then>
+                <phploc reportType="csv" reportName="phploc"
+                        reportDirectory="${project.build}" countTests="true">
+                    <fileset refid="${validation.fileset}"/>
+                </phploc>
+            </then>
+            <else>
+                <echo level="notice" message="skipping because target is disabled"/>
+            </else>
+        </if>
+    </target>
+</project>

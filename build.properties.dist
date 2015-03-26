@@ -1,0 +1,18 @@
+#codestyle
+codestyle.phpcodesniffer.enabled = true
+codestyle.phpdoc.enabled = true
+
+#phpcpd
+phpcpd.enabled = true
+
+#phpdoc
+phpdoc.enabled = true
+
+#phploc
+phploc.enabled = true
+
+#phpmd
+phpmd.enabled = true
+
+#test
+test.phpunit.enabled = true

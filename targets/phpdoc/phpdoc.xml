@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project name="phpdoc" basedir=".">
+    <target name="phpdoc" description="create api docs using phpdocumentor2">
+        <if>
+            <equals arg1="${phpdoc.enabled}" arg2="true"/>
+            <then>
+                <if>
+                    <available file="${project.root}/phpdoc.xml" />
+                    <then>
+                        <property name="phpdoc.config" value="${project.root}/phpdoc.xml" />
+                    </then>
+
+                    <elseif>
+                        <available file="${project.root}/phpdoc.dist.xml" />
+                        <then>
+                            <property name="phpdoc.config" value="${project.root}/phpdoc.dist.xml" />
+                        </then>
+                    </elseif>
+                    <else>
+                        <property name="phpdoc.config" value="${phing.commons.root}/targets/phpdoc/phpdoc.dist.xml" />
+                    </else>
+                </if>
+                <exec command="${project.bin}/phpdoc -d ${project.src} -t ${project.build} -c ${phpdoc.config}"
+                      passthru="true"/>
+            </then>
+            <else>
+                <echo level="notice" message="skipping because target is disabled"/>
+            </else>
+        </if>
+    </target>
+</project>

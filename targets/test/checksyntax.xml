@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project>
+    <target name="test.checksyntax" description="check syntax of all php files in the project">
+        <phplint haltonfailure="true">
+            <fileset refid="${validation.fileset}"/>
+        </phplint>
+    </target>
+</project>
