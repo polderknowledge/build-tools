@@ -80,7 +80,7 @@
         <phingcall target="test.phpunit" />
     </target>
 
-    <target name="checkstyle" depends="clean, prepare" description="run all tests">
+    <target name="checkstyle" depends="clean, prepare" description="run a style check">
         <phingcall target="codestyle.checkstyle" />
     </target>
 
