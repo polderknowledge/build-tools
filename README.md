@@ -13,7 +13,7 @@ Add our private package repository to your project's composer.json
 ```
 Run
 
-`composer require polderknowledge\build-tools`
+`composer require polderknowledge/build-tools`
 
 ### Initalize your build script
 execute `php vendor/bin/init-build.php` in your projects root. This will create a default build.xml.
