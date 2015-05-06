@@ -2,7 +2,12 @@
     "name": "polderknowledge/build-tools",
     "description": "A library package containing default build scripts for common usage",
     "require": {
-        "phing/phing": "~2.10"
+        "phing/phing": "~2.10",
+        "phpdocumentor/phpdocumentor" : "~2.8",
+        "phpunit/phpunit" : "~4.0",
+        "phploc/phploc" : "~2.1",
+        "sebastian/phpcpd" : "~2.0",
+        "phpmd/phpmd" : "~2.2"
     },
     "license": "proprietary",
     "authors": [
