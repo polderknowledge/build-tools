@@ -4,8 +4,9 @@
         <if>
             <equals arg1="${codestyle.phpcodesniffer.enabled}" arg2="true"/>
             <then>
+                <echo message="Checking codestyle using standard ${codestyle.standard}"/>
                 <phpcodesniffer
-                        standard="${project.vendor}/polderknowledge/coding-standards/PolderKnowledge/ruleset.xml"
+                        standard="${codestyle.standard}"
                         format="summary" skipversioncheck="true">
                     <fileset refid="${validation.fileset}"/>
                     <formatter type="full" usefile="false"/>

@@ -1,4 +1,5 @@
 #codestyle
+codestyle.standard = ${project.vendor}/polderknowledge/coding-standards/PolderKnowledge/ruleset.xml
 codestyle.phpcodesniffer.enabled = true
 codestyle.phpdoc.enabled = true
 
