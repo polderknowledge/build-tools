@@ -55,7 +55,6 @@
         </then>
     </if>
 
-
     <import file="${phing.commons.root}/targets/test/phpunit.xml" />
     <import file="${phing.commons.root}/targets/phpmd/phpmd.xml" />
     <import file="${phing.commons.root}/targets/phpcpd/phpcpd.xml" />
@@ -63,7 +62,6 @@
     <import file="${phing.commons.root}/targets/test/checksyntax.xml" />
     <import file="${phing.commons.root}/targets/codestyle/checkstyle.xml" />
     <import file="${phing.commons.root}/targets/phpdoc/phpdoc.xml" />
-
 
     <target name="clean" description="cleans the workspace">
         <delete dir="${project.build}" includeemptydirs="true" failonerror="false" />
