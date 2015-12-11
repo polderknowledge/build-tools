@@ -21,8 +21,10 @@
     <!-- fileset definition -->
     <!-- ============================================ -->
     <fileset id="all" dir="${project.root}">
-        <include name="**/*.php"/>
-        <exclude name="**/vendor/**" />
+        <include name="config/**/*.php"/>
+        <include name="module/**/*.php"/>
+        <include name="src/**/*.php"/>
+        <include name="tests/**/*.php"/>
     </fileset>
 
     <property name="validation.fileset" value="all" override="true" />
