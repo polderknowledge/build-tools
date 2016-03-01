@@ -7,7 +7,8 @@
                 <echo message="Checking codestyle using standard ${codestyle.standard}"/>
                 <phpcodesniffer
                         standard="${codestyle.standard}"
-                        format="summary" skipversioncheck="true">
+                        format="summary" skipversioncheck="true"
+                        haltonerror="true">
                     <fileset refid="${validation.fileset}"/>
                     <formatter type="full" usefile="false"/>
                     <formatter type="checkstyle" outfile="${project.build}/checkstyle-codesniffer.xml"/>
