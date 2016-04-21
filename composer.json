@@ -1,7 +1,16 @@
 {
     "name": "polderknowledge/build-tools",
-    "description": "A library package containing default build scripts for common usage",
+    "description": "A library package containing default build scripts for common usage. Since version 2.0 it doesn't contain the required php-qa tools. Suggested packages can be installed in the projector global when prefered by the user.",
     "require": {
+        "polderknowledge/coding-standards": "~1.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://developers.polderknowledge.nl/packages"
+        }
+    ],
+    "suggest": {
         "phing/phing": "~2.10",
         "phpdocumentor/phpdocumentor" : "~2.8",
         "phpunit/phpunit" : "~4.0",
@@ -11,12 +20,6 @@
         "polderknowledge/coding-standards": "~1.0",
         "squizlabs/php_codesniffer": "~2.3"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://packages.youngguns.nl"
-        }
-    ],
     "license": "proprietary",
     "authors": [
         {
