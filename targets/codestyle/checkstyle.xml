@@ -24,7 +24,7 @@
         <if>
             <equals arg1="${codestyle.phpdoc.enabled}" arg2="true"/>
             <then>
-                <exec command="${project.bin}/phpdoc -d ${project.src} --template=checkstyle -t ${project.build} --cache-folder=${project.build}/phpdoc-cache"
+                <exec command="phpdoc -d ${project.src} --template=checkstyle -t ${project.build} --cache-folder=${project.build}/phpdoc-cache"
                       passthru="true"/>
             </then>
             <else>
