@@ -3,8 +3,6 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]][link-license]
 [![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 This package contains a default set of [Phing](https://www.phing.info/) targets 
@@ -31,9 +29,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Testing
 
-``` bash
-$ composer test
-```
+There are no test scripts available.
 
 ## Contributing
 
@@ -61,14 +57,10 @@ Please see [LICENSE.md][link-license] for the license of this application.
 [ico-version]: https://img.shields.io/packagist/v/polderknowledge/build-tools.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/polderknowledge/build-tools/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/polderknowledge/build-tools.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/polderknowledge/build-tools.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/polderknowledge/build-tools.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/polderknowledge/build-tools
 [link-travis]: https://travis-ci.org/polderknowledge/build-tools
-[link-scrutinizer]: https://scrutinizer-ci.com/g/polderknowledge/build-tools/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/polderknowledge/build-tools
 [link-downloads]: https://packagist.org/packages/polderknowledge/build-tools
 [link-author]: https://polderknowledge.com
 [link-contributors]: ../../contributors
