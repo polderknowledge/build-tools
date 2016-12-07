@@ -57,6 +57,7 @@
         </then>
     </if>
 
+    <import file="${project.vendor}/bitexpert/phing-securitychecker/build.xml" />
     <import file="${phing.commons.root}/targets/test/phpunit.xml" />
     <import file="${phing.commons.root}/targets/phpmd/phpmd.xml" />
     <import file="${phing.commons.root}/targets/phpcpd/phpcpd.xml" />
@@ -103,4 +104,7 @@
         <phingcall target="phpmd" />
     </target>
 
+    <target name="security-check">
+        <securitychecker lockfile="composer.lock" />
+    </target>
 </project>
