@@ -17,3 +17,6 @@ phpmd.enabled = true
 
 #test
 test.phpunit.enabled = true
+
+#security
+security-check.enabled = true
