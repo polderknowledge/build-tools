@@ -91,6 +91,7 @@
         <phingcall target="test.checksyntax" />
         <phingcall target="test.phpunit" />
         <phingcall target="codestyle.checkstyle" />
+        <phingcall target="security-check" />
     </target>
 
     <target name="build-ci" description="run full build chain including reports">
@@ -99,12 +100,21 @@
         <phingcall target="test.checksyntax" />
         <phingcall target="test.phpunit" />
         <phingcall target="codestyle.checkstyle" />
+        <phingcall target="security-check" />
         <phingcall target="phpcpd" />
         <phingcall target="phploc" />
         <phingcall target="phpmd" />
     </target>
 
     <target name="security-check">
-        <securitychecker lockfile="composer.lock" />
+        <if>
+            <equals arg1="${security-check.enabled}" arg2="true"/>
+            <then>
+                <securitychecker lockfile="composer.lock" />
+            </then>
+            <else>
+                <echo level="warning" message="skipping because target is disabled."/>
+            </else>
+        </if>
     </target>
 </project>
