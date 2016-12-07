@@ -11,7 +11,6 @@
     "require": {
         "php": "~5.5|~7.0",
         "bitexpert/phing-securitychecker": "^0.2.1",
-        "phpunit/phpunit": "^4.0|^5.0",
         "polderknowledge/coding-standards": "^1.1"
     },
     "autoload": {
