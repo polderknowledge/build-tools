@@ -11,7 +11,8 @@
     "require": {
         "php": "~5.5|~7.0",
         "bitexpert/phing-securitychecker": "^0.2.1",
-        "polderknowledge/coding-standards": "^1.1"
+        "polderknowledge/coding-standards": "^1.1",
+        "wimg/php-compatibility": "^8.1"
     },
     "autoload": {
         "psr-4": {
