@@ -91,7 +91,6 @@
         <phingcall target="test.checksyntax" />
         <phingcall target="test.phpunit" />
         <phingcall target="codestyle.checkstyle" />
-        <phingcall target="security-check" />
     </target>
 
     <target name="build-ci" description="run full build chain including reports">
@@ -99,8 +98,7 @@
         <phingcall target="prepare" />
         <phingcall target="test.checksyntax" />
         <phingcall target="test.phpunit" />
-        <phingcall target="codestyle.checkstyle" />
-        <phingcall target="security-check" />
+        <phingcall target="codestyle.checkstyle" />       
         <phingcall target="phpcpd" />
         <phingcall target="phploc" />
         <phingcall target="phpmd" />
