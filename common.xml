@@ -115,4 +115,16 @@
             </else>
         </if>
     </target>
+    
+    <target name="compatibility:check" description="check the php compatiblity ">
+                <phpcodesniffer
+                        standard="vendor/wimg/php-compatibility/PHPCompatibility"
+                        format="summary" skipversioncheck="true"
+                        showSniffs="true" showWarnings="true"
+                        haltonerror="true">
+                    <fileset refid="phpcompat"/>
+                    <formatter type="full" usefile="false"/>
+                    <formatter type="checkstyle" outfile="${project.build}/checkstyle-codesniffer.xml"/>
+                </phpcodesniffer>
+    </target>
 </project>
