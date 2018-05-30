@@ -9,7 +9,7 @@
         <if>
             <equals arg1="${test.phpunit.enabled}" arg2="true"/>
             <then>
-                <exec command="phpunit" passthru="true" level="info" checkreturn="true"/>
+                <exec command="${test.phpunit.phar_path}" passthru="true" level="info" checkreturn="true"/>
             </then>
             <else>
                 <echo level="notice" message="skipping because target is disabled"/>
