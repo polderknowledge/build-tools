@@ -5,45 +5,45 @@
          xsi:noNamespaceSchemaLocation=" http://pmd.sf.net/ruleset_xml_schema.xsd">
     <description>Default rules for polderknowledge projects</description>
 
-    <rule ref="rulesets/cleancode.xml/BooleanArgumentFlag" />
-    <rule ref="rulesets/cleancode.xml/ElseExpression" />
-    <rule ref="rulesets/cleancode.xml/StaticAccess" />
+    <rule ref="rulesets/cleancode.xml/BooleanArgumentFlag"/>
+    <rule ref="rulesets/cleancode.xml/ElseExpression"/>
+    <rule ref="rulesets/cleancode.xml/StaticAccess"/>
 
-    <rule ref="rulesets/codesize.xml/CyclomaticComplexity" />
-    <rule ref="rulesets/codesize.xml/NPathComplexity" />
-    <rule ref="rulesets/codesize.xml/ExcessiveMethodLength" />
-    <rule ref="rulesets/codesize.xml/ExcessiveClassLength" />
-    <rule ref="rulesets/codesize.xml/ExcessiveParameterList" />
-    <rule ref="rulesets/codesize.xml/ExcessivePublicCount" />
-    <rule ref="rulesets/codesize.xml/TooManyFields" />
+    <rule ref="rulesets/codesize.xml/CyclomaticComplexity"/>
+    <rule ref="rulesets/codesize.xml/NPathComplexity"/>
+    <rule ref="rulesets/codesize.xml/ExcessiveMethodLength"/>
+    <rule ref="rulesets/codesize.xml/ExcessiveClassLength"/>
+    <rule ref="rulesets/codesize.xml/ExcessiveParameterList"/>
+    <rule ref="rulesets/codesize.xml/ExcessivePublicCount"/>
+    <rule ref="rulesets/codesize.xml/TooManyFields"/>
     <rule ref="rulesets/codesize.xml/TooManyMethods">
         <priority>5</priority>
     </rule>
-    <rule ref="rulesets/codesize.xml/ExcessiveClassComplexity" />
-    <rule ref="rulesets/controversial.xml/Superglobals" />
-    <rule ref="rulesets/controversial.xml/CamelCaseClassName" />
-    <rule ref="rulesets/controversial.xml/CamelCasePropertyName" />
-    <rule ref="rulesets/controversial.xml/CamelCaseMethodName" />
-    <rule ref="rulesets/controversial.xml/CamelCaseParameterName" />
-    <rule ref="rulesets/controversial.xml/CamelCaseVariableName" />
-    <rule ref="rulesets/design.xml/ExitExpression" />
-    <rule ref="rulesets/design.xml/EvalExpression" />
-    <rule ref="rulesets/design.xml/GotoStatement" />
-    <rule ref="rulesets/design.xml/NumberOfChildren" />
-    <rule ref="rulesets/design.xml/DepthOfInheritance" />
-    <rule ref="rulesets/design.xml/CouplingBetweenObjects" />
+    <rule ref="rulesets/codesize.xml/ExcessiveClassComplexity"/>
+    <rule ref="rulesets/controversial.xml/Superglobals"/>
+    <rule ref="rulesets/controversial.xml/CamelCaseClassName"/>
+    <rule ref="rulesets/controversial.xml/CamelCasePropertyName"/>
+    <rule ref="rulesets/controversial.xml/CamelCaseMethodName"/>
+    <rule ref="rulesets/controversial.xml/CamelCaseParameterName"/>
+    <rule ref="rulesets/controversial.xml/CamelCaseVariableName"/>
+    <rule ref="rulesets/design.xml/ExitExpression"/>
+    <rule ref="rulesets/design.xml/EvalExpression"/>
+    <rule ref="rulesets/design.xml/GotoStatement"/>
+    <rule ref="rulesets/design.xml/NumberOfChildren"/>
+    <rule ref="rulesets/design.xml/DepthOfInheritance"/>
+    <rule ref="rulesets/design.xml/CouplingBetweenObjects"/>
     <rule ref="rulesets/naming.xml/ShortVariable">
         <properties>
-            <property name="minimum" value="2" />
+            <property name="minimum" value="2"/>
         </properties>
     </rule>
-    <rule ref="rulesets/naming.xml/LongVariable" />
-    <rule ref="rulesets/naming.xml/ShortMethodName" />
-    <rule ref="rulesets/naming.xml/ConstructorWithNameAsEnclosingClass" />
-    <rule ref="rulesets/naming.xml/ConstantNamingConventions" />
-    <rule ref="rulesets/naming.xml/BooleanGetMethodName" />
-    <rule ref="rulesets/unusedcode.xml/UnusedPrivateField" />
-    <rule ref="rulesets/unusedcode.xml/UnusedLocalVariable" />
-    <rule ref="rulesets/unusedcode.xml/UnusedPrivateMethod" />
-    <rule ref="rulesets/unusedcode.xml/UnusedFormalParameter" />
+    <rule ref="rulesets/naming.xml/LongVariable"/>
+    <rule ref="rulesets/naming.xml/ShortMethodName"/>
+    <rule ref="rulesets/naming.xml/ConstructorWithNameAsEnclosingClass"/>
+    <rule ref="rulesets/naming.xml/ConstantNamingConventions"/>
+    <rule ref="rulesets/naming.xml/BooleanGetMethodName"/>
+    <rule ref="rulesets/unusedcode.xml/UnusedPrivateField"/>
+    <rule ref="rulesets/unusedcode.xml/UnusedLocalVariable"/>
+    <rule ref="rulesets/unusedcode.xml/UnusedPrivateMethod"/>
+    <rule ref="rulesets/unusedcode.xml/UnusedFormalParameter"/>
 </ruleset>

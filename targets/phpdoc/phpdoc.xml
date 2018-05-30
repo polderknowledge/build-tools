@@ -5,19 +5,19 @@
             <equals arg1="${phpdoc.enabled}" arg2="true"/>
             <then>
                 <if>
-                    <available file="${project.root}/phpdoc.xml" />
+                    <available file="${project.root}/phpdoc.xml"/>
                     <then>
-                        <property name="phpdoc.config" value="${project.root}/phpdoc.xml" />
+                        <property name="phpdoc.config" value="${project.root}/phpdoc.xml"/>
                     </then>
 
                     <elseif>
-                        <available file="${project.root}/phpdoc.dist.xml" />
+                        <available file="${project.root}/phpdoc.dist.xml"/>
                         <then>
-                            <property name="phpdoc.config" value="${project.root}/phpdoc.dist.xml" />
+                            <property name="phpdoc.config" value="${project.root}/phpdoc.dist.xml"/>
                         </then>
                     </elseif>
                     <else>
-                        <property name="phpdoc.config" value="${phing.commons.root}/targets/phpdoc/phpdoc.dist.xml" />
+                        <property name="phpdoc.config" value="${phing.commons.root}/targets/phpdoc/phpdoc.dist.xml"/>
                     </else>
                 </if>
                 <exec command="phpdoc -d ${project.src} -t ${project.build} -c ${phpdoc.config}"
