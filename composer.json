@@ -9,20 +9,9 @@
     "homepage": "https://polderknowledge.com",
     "license": "MIT",
     "require": {
-        "php": "~5.5|~7.0",
-        "bitexpert/phing-securitychecker": "^0.2.1",
-        "polderknowledge/coding-standards": "^1.1",
-        "wimg/php-compatibility": "^8.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "PolderKnowledge\\BuildTools\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "PolderKnowledge\\BuildToolsTest\\": "tests"
-        }
+        "php": "~7.1",
+        "bitexpert/phing-securitychecker": "^0.3.1",
+        "polderknowledge/coding-standards": "^2.0"
     },
     "bin": [
         "bin/pk-init-build.php"
